@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root {
+            --nord0: #2E3440;
+            --nord1: #3B4252;
+            --nord2: #434C5E;
+            --nord3: #4C566A;
+            --nord4: #D8DEE9;
+            --nord5: #E5E9F0;
+            --nord6: #ECEFF4;
+            --nord7: #8FBCBB;
+            --nord8: #88C0D0;
+            --nord9: #81A1C1;
+            --nord10: #5E81AC;
+            --nord11: #BF616A;
+            --nord12: #D08770;
+            --nord13: #EBCB8B;
+            --nord14: #A3BE8C;
+            --nord15: #B48EAD;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--nord0);
+            font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+            color: var(--nord4);
+        }
+
+        .terminal {
+            background-color: var(--nord1);
+            border: 2px solid var(--nord3);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 8px 24px rgba(46, 52, 64, 0.5);
+            position: relative;
+            min-width: 600px;
+        }
+
+        .title-bar {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            right: 0;
+            background-color: var(--nord2);
+            padding: 5px;
+            border: 2px solid var(--nord3);
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            text-align: center;
+            color: var(--nord6);
+        }
+
+        .content {
+            margin: 10px 0;
+            padding: 5px;
+        }
+
+        .border {
+            white-space: pre;
+            color: var(--nord9);
+            margin: 10px 0;
+        }
+
+        .user-greeting {
+            text-align: center;
+            font-size: 1.4rem;
+            margin: 10px 0;
+            color: var(--nord13);
+            text-shadow: 0 0 10px rgba(235, 203, 139, 0.2);
+        }
+
+        .time {
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--nord8);
+            font-weight: bold;
+        }
+
+        .date {
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: var(--nord9);
+        }
+
+        .greeting {
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: var(--nord14);
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .colon {
+            animation: blink 1s step-start infinite;
+            color: var(--nord7);
+        }
+
+        .prompt {
+            margin-top: 20px;
+            border-top: 1px solid var(--nord3);
+            padding-top: 10px;
+            color: var(--nord4);
+        }
+
+        .prompt::before {
+            content: "→ ";
+            color: var(--nord10);
+        }
+
+        @keyframes cursor {
+            50% { background-color: var(--nord4); }
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background-color: var(--nord8);
+            margin-left: 5px;
+            animation: cursor 1s step-start infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="title-bar">Hash_Cr4cker@nord ~ system-status</div>
+        <div class="border">╭────────────────────────────────────────────────────────────╮</div>
+        <div class="content">
+            <div class="user-greeting">Welcome back, Hash_Cr4cker!</div>
+            <div class="time" id="time">00:00:00</div>
+            <div class="date" id="date">Monday, January 1, 2024</div>
+            <div class="greeting" id="greeting">Good morning!</div>
+        </div>
+        <div class="border">╰────────────────────────────────────────────────────────────╯</div>
+        <div class="prompt">
+            status --user Hash_Cr4cker<span class="cursor"></span>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+
+            // Format time with blinking colons
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('time').innerHTML =
+                `${hours}<span class="colon">:</span>${minutes}<span class="colon">:</span>${seconds}`;
+
+            // Format date with full details
+            const dateOptions = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+            document.getElementById('date').textContent = now.toLocaleDateString('en-US', dateOptions);
+
+            // Update greeting based on time of day
+            const hour = now.getHours();
+            let greeting = '';
+
+            if (hour >= 5 && hour < 12) {
+                greeting = 'Time to start cracking, Hash_Cr4cker!';
+            } else if (hour >= 12 && hour < 17) {
+                greeting = 'Keep the codes flowing, Hash_Cr4cker!';
+            } else if (hour >= 17 && hour < 22) {
+                greeting = 'Evening hacks await, Hash_Cr4cker!';
+            } else {
+                greeting = 'Night is young for coding, Hash_Cr4cker!';
+            }
+
+            document.getElementById('greeting').textContent = greeting;
+        }
+
+        // Update time immediately and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
