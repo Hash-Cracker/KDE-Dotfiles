@@ -3,6 +3,12 @@
 # KDE Plasma Dotfiles 
 </div>
 
+![riceSS](home.png)
+![riceSS](home-dolphin.png)
+I have updated the top panel in the second picture
+
+
+
 
 <div align="center">
 
