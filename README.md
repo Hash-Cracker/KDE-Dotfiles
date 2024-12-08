@@ -8,6 +8,7 @@
 ![riceSS](home-applications.png)
 
 I have updated the top panel in the second picture
+If you want to apply all at once instead of doing it one by one use konsave in the [konsave](konsave)
 
 
 
