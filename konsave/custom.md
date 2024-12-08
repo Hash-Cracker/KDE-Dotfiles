@@ -1,4 +1,4 @@
-Install konsave in your computer and use this `.knsv` to get the themes in your Desktop Environment
+Install konsave in your computer and install the `.knsv` and use the below commands to apply the themes in one command and logout and log back for the changes
 ```bash
 konsave -i <path-to-the-knsv-file>
 ```
