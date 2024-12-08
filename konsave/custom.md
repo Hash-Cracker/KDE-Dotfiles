@@ -6,4 +6,4 @@ and then,
 ```bash
 konsave -a Nord
 ```
-[Link to my Konsave file](https://buzzheavier.com/i43z9bho0gyl)
+[Drive link to my Konsave file](https://drive.google.com/file/d/1pDwR2TTGgEEsCyXNUo1t45SMcvwRpE-S/view?usp=drive_link)
