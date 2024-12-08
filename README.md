@@ -5,6 +5,8 @@
 
 ![riceSS](home.png)
 ![riceSS](home-dolphin.png)
+![riceSS](home-applications.png)
+
 I have updated the top panel in the second picture
 
 
