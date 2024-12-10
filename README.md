@@ -9,6 +9,7 @@
 ![riceSS](home-2.png)
 ![riceSS](firefox.png)
 ![riceSS](Spotify.png)
+![riceSS](neovim.png)
 
 I have updated the top panel in the second picture
 If you want to apply all at once instead of doing it one by one use konsave in the [konsave](konsave)
