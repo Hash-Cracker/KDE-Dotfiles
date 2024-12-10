@@ -6,10 +6,13 @@
 ![riceSS](home.png)
 ![riceSS](home-dolphin.png)
 ![riceSS](home-applications.png)
+![riceSS](home-2.png)
+![riceSS](firefox.png)
+![riceSS](Spotify.png)
 
 I have updated the top panel in the second picture
 If you want to apply all at once instead of doing it one by one use konsave in the [konsave](konsave)
-
+For Firefox I use textfox with horizontal tabs and mtab for the firefox homepage with custom configurations
 
 
 
